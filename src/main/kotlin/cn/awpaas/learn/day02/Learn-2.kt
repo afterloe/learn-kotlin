@@ -41,4 +41,19 @@ fun main(args: Array<String>) {
     val intArray = arrayOf(1,10,3,12,56,23,13,6,5)
     println("input max value is ${maxValue(intArray).invoke()}")
     println("random max value is ${maxValue(toList(10)).invoke()}")
+
+    val intArr_1 = toList(11)
+    println("init array ...")
+    // 非lambda 调用，这里的 return 相当于 break
+    intArr_1.forEach ( fun (a: Int) {
+        if (a > 0) return
+        print("\t $a")
+    } )
+    print("\n")
+    println("init array ... lambda")
+    // lambda 调用，这里的 return 相当于 continue
+    intArr_1.forEach {
+        if (it > 0) return
+        print("\t $it")
+    }
 }
