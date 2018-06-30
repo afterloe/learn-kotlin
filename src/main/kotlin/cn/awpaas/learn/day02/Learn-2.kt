@@ -56,4 +56,7 @@ fun main(args: Array<String>) {
         if (it > 0) return
         print("\t $it")
     }
+
+//    val arr_empt = arrayOfNulls<Int>( 10) // 创建一个长度为10的空int数组
+
 }
