@@ -16,5 +16,25 @@ fun main(args: Array<String>) {
 //    list1.addAll(2, list)
 //    list.toMutableList() // 也可以用这种方式将list 转换为 mutableList
 
+    // list中的元素删除
+    val value = list1.removeAt(0);
+    println("remove first element is $value") // 2,3
 
+    var flag = list1.set(1, 200) // 2, 200
+    println("input value is $flag") // 返回删除的原value -> 3
+
+    val target = list1.single { i -> i == 200} // 返回符合条件的单一元素，如果返回多个则会报错
+    println(target)
+
+    val list2 = mutableListOf("a", "b", "c", "d")
+    // 从最右边开始计算
+    val value2 = list2.reduceRight{total, v -> v + total} //dcba
+    println(value2)
+
+    // 带初始值的 reduce
+    flag = list1.fold(100) { total, v -> v + total}
+    println("new flag is $flag")
+
+    println("abc is big then abd? -> ${"abc" > "abd"}") // false => 字符串比较大小是按照下标字符进行的
+    println("true is big then false? -> ${true > false}") // true
 }
