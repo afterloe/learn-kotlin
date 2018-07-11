@@ -1,6 +1,10 @@
 package cn.awpaas.learn.day02
 
 fun main(args: Array<String>) {
+    /*
+    list 是不可变的集合
+    mutableList 是可变的list集合
+     */
     val list: List<Int> = listOf() // 创建一个空的list
     println(list.size)
 
