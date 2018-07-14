@@ -3,7 +3,7 @@ package cn.awpaas.learn.day03
 /*
 类的基本用法
  */
-class Dog(name: String) {
+open class Dog(name: String) {
     // 多构造函数的使用与申明
     constructor() : this("嘿嘿"){
     }
@@ -16,14 +16,20 @@ class Dog(name: String) {
  */
 class MyDog private constructor(var name: String, age: Number) {
 
-    // 类似于 static
-    companion object {
+    // 伴生对象块， 一个类只能拥有一个。 类似于 static 代码块 这是一个类，他还能实现接口
+    companion object { //: Dog("aaa") {
 
         // 函数初始值
         fun buyDoy(name: String = "黑黑", age: Number = 0.3): MyDog = MyDog(name, age)
     }
 
     fun say(): String = "汪汪汪"
+}
+
+// static 类
+object User {
+    val name = "user"
+    fun SayTo() = println(name)
 }
 
 /*
@@ -67,4 +73,7 @@ fun main(args: Array<String>) {
     println(dog1.say())
     dog1.name = "嗷大喵" // 自带setter
     println(dog1.name)
+
+    // 直接使用静态方法
+    User.SayTo()
 }
