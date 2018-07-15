@@ -9,6 +9,11 @@ open class Dog(name: String) {
     }
 }
 
+// 带参数继承
+//class guaizibin(var name: String): Dog(name) {
+//
+//}
+
 /*
 私有构造函数
 
