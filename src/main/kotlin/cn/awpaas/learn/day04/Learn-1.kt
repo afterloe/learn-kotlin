@@ -13,6 +13,9 @@ fun A_temper.link(x: Int): Int {
     return this.double(x + 1)
 }
 
+// 中辍函数
+infix fun A_temper.remote(x: Int): Int = this.double(x + 2)
+
 fun main(args: Array<String>) {
     // 函数传递
     // 先申明一个函数 字面量
@@ -24,4 +27,8 @@ fun main(args: Array<String>) {
     val d = A_temper()
     println(d.double(4))
     println(d.link(4))
+
+    // 中辍函数的运用 - 相当于换一个 调度方式 等同于 d.remote(4)
+    val d1 = d remote 4
+    println(d1)
 }
